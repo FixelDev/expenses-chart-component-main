@@ -1,0 +1,201 @@
+@import 'config';
+@import 'utilities';
+
+*
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body
+{
+    font-family: 'DM Sans';
+    font-size: 18px;
+}
+
+main
+{
+    height: 100vh;
+    background-color: $cream;
+}
+
+footer
+{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px 0;
+    color: $dark-brown;
+    text-align: center;
+    a
+    {
+        text-decoration: none;
+        color: $soft-red;
+    }
+}
+
+.lead
+{
+    color: $medium-brown;
+}
+
+.title
+{
+    color: $dark-brown;
+}
+
+.content
+{
+    min-width: 100px;
+    padding: 10px;
+    .container
+    {
+        padding: 25px;
+    }
+
+    .panel-heading
+    {
+        background-color: $soft-red;
+        border-radius: 15px;
+        margin-bottom: 15px;
+        
+        .container
+        {
+            justify-content: space-between;
+            .heading-info
+            {
+                color: $very-pale-orange;
+
+                .title
+                {
+                    color: $very-pale-orange;
+                    font-size: 0.8rem;
+                }
+            }
+        }
+    }
+
+    .panel
+    {
+        background-color: $very-pale-orange;
+        border-radius: 15px;
+        .container
+        {
+            min-width: 100px;
+
+            .title
+            {
+                font-size: 1.5rem;
+            }
+
+            .charts-container
+            {
+                
+                height: 200px;
+                border-bottom: 2px solid $cream;
+                justify-content: space-between;
+                align-items: flex-end;
+                padding: 15px 0px 25px;
+                .item
+                {
+                    height: 80%;
+                    justify-content: flex-end;
+                    align-items: center;
+                    margin: 0 7px;
+                    min-width: 20px;
+                    .chart
+                    {
+                        background-color: $soft-red;
+                        width: 40px;
+                        max-width: 100%;
+                        border-radius: 4px;
+                        position: relative;
+                        .money-spent-panel
+                        {
+                            background-color: $dark-brown;
+                            padding: 5px 8px;
+                            border-radius: 3px;
+                            position: absolute;
+                            left: 50%;
+                            top: -35px;
+                            transform: translateX(-50%);
+                            opacity: 0;
+                            transition: 0.7s;
+                            .lead
+                            {
+                                color: $cream;
+                                font-size: 0.8rem;
+                            }
+                        }
+                    }
+
+                    .chart.current
+                    {
+                        background-color: $cyan;
+                    }
+
+                    .chart:hover
+                    {
+                        background-color: lighten($soft-red, 5%);
+                        cursor: pointer;
+
+                        .money-spent-panel
+                        {
+                            opacity: 1;
+                        }
+                    }
+
+                    .chart.current:hover
+                    {
+                        background-color: lighten($cyan, 15%);
+                    }
+
+                    .title
+                    {
+                        margin-top: 6px;
+                        font-weight: 400;
+                        font-size: 0.7rem;
+                    }
+                }
+
+            }
+        }
+    }
+
+    .summary
+    {
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-top: 20px;
+        .current-month
+        {
+
+            .lead
+            {
+                font-size: 0.8rem;
+            }
+
+            h2
+            {
+                font-size: 2rem;
+                color: $dark-brown;
+            }
+        }
+
+        .last-month
+        {
+
+            .lead, h2
+            {
+                font-size: 0.8rem;
+            }
+        
+            h2
+            {
+                align-self: flex-end;
+                color: $dark-brown
+            }
+        }
+    }
+}
